@@ -9,8 +9,8 @@
 
 Pod::Spec.new do |s|
   s.name             = "PlaceholderTextView"
-  s.version          = "0.1.0"
-  s.summary          = "Add a placeholder to TextView."
+  s.version          = "0.1.1"
+  s.summary          = "TextView with placeholder."
   s.description      = <<-DESC
                        Add a placeholder to TextView.
                        DESC
