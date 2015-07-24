@@ -13,7 +13,7 @@
 		7924E6411B61E77E00D3BBB0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7924E6401B61E77E00D3BBB0 /* Images.xcassets */; };
 		7924E6441B61E77E00D3BBB0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7924E6421B61E77E00D3BBB0 /* LaunchScreen.xib */; };
 		7924E6501B61E77E00D3BBB0 /* PlaceholderTextViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7924E64F1B61E77E00D3BBB0 /* PlaceholderTextViewTests.swift */; };
-		7924E65C1B61E79300D3BBB0 /* PlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7924E65B1B61E79300D3BBB0 /* PlaceholderTextView.swift */; };
+		796C8EFD1B62129D00EC4ACD /* PlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796C8EFC1B62129D00EC4ACD /* PlaceholderTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +37,7 @@
 		7924E6491B61E77E00D3BBB0 /* PlaceholderTextViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlaceholderTextViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7924E64E1B61E77E00D3BBB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7924E64F1B61E77E00D3BBB0 /* PlaceholderTextViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderTextViewTests.swift; sourceTree = "<group>"; };
-		7924E65B1B61E79300D3BBB0 /* PlaceholderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceholderTextView.swift; sourceTree = "<group>"; };
+		796C8EFC1B62129D00EC4ACD /* PlaceholderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceholderTextView.swift; path = ../../Pod/Classes/PlaceholderTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +79,7 @@
 		7924E6361B61E77E00D3BBB0 /* PlaceholderTextView */ = {
 			isa = PBXGroup;
 			children = (
-				7924E65B1B61E79300D3BBB0 /* PlaceholderTextView.swift */,
+				796C8EFC1B62129D00EC4ACD /* PlaceholderTextView.swift */,
 				7924E6391B61E77E00D3BBB0 /* AppDelegate.swift */,
 				7924E63B1B61E77E00D3BBB0 /* ViewController.swift */,
 				7924E63D1B61E77E00D3BBB0 /* Main.storyboard */,
@@ -215,7 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7924E65C1B61E79300D3BBB0 /* PlaceholderTextView.swift in Sources */,
+				796C8EFD1B62129D00EC4ACD /* PlaceholderTextView.swift in Sources */,
 				7924E63C1B61E77E00D3BBB0 /* ViewController.swift in Sources */,
 				7924E63A1B61E77E00D3BBB0 /* AppDelegate.swift in Sources */,
 			);
@@ -413,6 +413,7 @@
 				7924E6551B61E77E00D3BBB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7924E6561B61E77E00D3BBB0 /* Build configuration list for PBXNativeTarget "PlaceholderTextViewTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +422,7 @@
 				7924E6581B61E77E00D3BBB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
