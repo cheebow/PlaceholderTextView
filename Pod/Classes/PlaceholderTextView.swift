@@ -46,7 +46,7 @@ class PlaceholderTextView: UITextView {
         }
     }
 
-    override var font: UIFont! {
+    override var font: UIFont? {
         set {
             super.font = newValue
             self.placeholderLabel.font = newValue
@@ -81,12 +81,12 @@ class PlaceholderTextView: UITextView {
         self.sendSubviewToBack(placeholderLabel)
 
         let center = NSNotificationCenter.defaultCenter()
-        center.addObserver(self, selector: "textChanged:", name: UITextViewTextDidChangeNotification, object: nil)
+        center.addObserver(self, selector: #selector(PlaceholderTextView.textChanged(_:)), name: UITextViewTextDidChangeNotification, object: nil)
         
         self.textChanged(nil)
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.setup()
     }
