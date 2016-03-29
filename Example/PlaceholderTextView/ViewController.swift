@@ -19,6 +19,7 @@ class ViewController: UIViewController {
         placeholderTextView.frame = frame
         placeholderTextView.placeholder = "Placeholder Text"
         placeholderTextView.placeholderColor = UIColor.lightGrayColor()
+        placeholderTextView.font = UIFont.systemFontOfSize(20.0)
         self.view.addSubview(placeholderTextView)
     }
 
