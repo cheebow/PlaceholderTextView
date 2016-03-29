@@ -17,7 +17,7 @@ class PlaceholderTextView: UITextView {
     var placeholderColor: UIColor {
         set {
             _placeholderColor = newValue
-            self.placeholderLabel.textColor = self.placeholderColor
+            self.placeholderLabel.textColor = newValue
         }
         get {
             return _placeholderColor
@@ -28,7 +28,7 @@ class PlaceholderTextView: UITextView {
     var placeholder: String {
         set {
             _placeholder = newValue
-            self.placeholderLabel.text = self.placeholder
+            self.placeholderLabel.text = newValue
             self.placeholderSizeToFit()
         }
         get {
