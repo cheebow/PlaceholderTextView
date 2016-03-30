@@ -20,7 +20,7 @@ self.view.addSubview(placeholderTextView)
 
 ## Requirements
 
-- Swift 1.2+
+- Swift 2.2+
 
 ## Installation
 
