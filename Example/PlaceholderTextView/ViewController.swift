@@ -15,11 +15,11 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         let placeholderTextView = PlaceholderTextView()
-        let frame = CGRectMake(0.0, 20.0, 320.0, 100.0)
+        let frame = CGRect(x: 0.0, y: 20.0, width: 320.0, height: 100.0)
         placeholderTextView.frame = frame
         placeholderTextView.placeholder = "Placeholder Text"
-        placeholderTextView.placeholderColor = UIColor.lightGrayColor()
-        placeholderTextView.font = UIFont.systemFontOfSize(20.0)
+        placeholderTextView.placeholderColor = UIColor.lightGray
+        placeholderTextView.font = UIFont.systemFont(ofSize: 20.0)
         self.view.addSubview(placeholderTextView)
     }
 
