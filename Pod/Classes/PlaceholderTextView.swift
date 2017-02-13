@@ -7,93 +7,79 @@
 
 import UIKit
 
-class PlaceholderTextView: UITextView {
-    let PLACEHOLDER_LEFT_MARGIN: CGFloat = 4.0
-    let PLACEHOLDER_TOP_MARGIN: CGFloat = 8.0
+public class PlaceholderTextView: UITextView {
+    let placeholderLeftMargin: CGFloat = 4.0
+    let placeholderTopMargin: CGFloat = 8.0
     
-    var placeholderLabel: UILabel = UILabel()
+    lazy var placeholderLabel: UILabel = {
+        let label = UILabel()
+        label.lineBreakMode = NSLineBreakMode.byWordWrapping
+        label.numberOfLines = 0
+        label.backgroundColor = UIColor.clear
+        label.alpha = 1.0
 
-    var _placeholderColor: UIColor = UIColor.lightGray
-    var placeholderColor: UIColor {
-        set {
-            _placeholderColor = newValue
-            self.placeholderLabel.textColor = newValue
-        }
-        get {
-            return _placeholderColor
-        }
-    }
-    
-    var _placeholder: String = ""
-    var placeholder: String {
-        set {
-            _placeholder = newValue
-            self.placeholderLabel.text = newValue
-            self.placeholderSizeToFit()
-        }
-        get {
-            return _placeholder
+        return label
+    }()
+
+    @IBInspectable
+    public var placeholderColor: UIColor = UIColor.lightGray {
+        didSet {
+            placeholderLabel.textColor = placeholderColor
         }
     }
     
-    override var text: String! {
-        set {
-            super.text = newValue
-            self.textChanged(nil)
+    @IBInspectable
+    public var placeholder: String = "" {
+        didSet {
+            placeholderLabel.text = placeholder
+            placeholderSizeToFit()
         }
-        get {
-            return super.text
+    }
+    
+    override public var text: String! {
+        didSet {
+            textChanged(nil)
         }
     }
 
-    override var font: UIFont? {
-        set {
-            super.font = newValue
-            self.placeholderLabel.font = newValue
-            self.placeholderSizeToFit()
-        }
-        get {
-            return super.font
+    override public var font: UIFont? {
+        didSet {
+            placeholderLabel.font = font
+            placeholderSizeToFit()
         }
     }
     
     fileprivate func placeholderSizeToFit() {
-        self.placeholderLabel.frame = CGRect(x: PLACEHOLDER_LEFT_MARGIN, y: PLACEHOLDER_TOP_MARGIN, width: self.frame.width - PLACEHOLDER_LEFT_MARGIN * 2, height: 0.0)
-        self.placeholderLabel.sizeToFit()
+        placeholderLabel.frame = CGRect(x: placeholderLeftMargin, y: placeholderTopMargin, width: frame.width - placeholderLeftMargin * 2, height: 0.0)
+        placeholderLabel.sizeToFit()
     }
 
     fileprivate func setup() {
-        self.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
-        self.font = UIFont.systemFont(ofSize: 12.0)
+        contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
+        font = UIFont.systemFont(ofSize: 12.0)
         
-        self.placeholderLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
-        self.placeholderLabel.numberOfLines = 0
-        self.placeholderLabel.font = self.font
-        self.placeholderLabel.backgroundColor = UIColor.clear
-        self.placeholderLabel.alpha = 1.0
-        self.placeholderLabel.tag = 999
-        
-        self.placeholderLabel.textColor = self.placeholderColor
-        self.placeholderLabel.text = self.placeholder
-        self.placeholderSizeToFit()
-        self.addSubview(placeholderLabel)
+        placeholderLabel.font = self.font
+        placeholderLabel.textColor = placeholderColor
+        placeholderLabel.text = placeholder
+        placeholderSizeToFit()
+        addSubview(placeholderLabel)
 
         self.sendSubview(toBack: placeholderLabel)
 
         let center = NotificationCenter.default
-        center.addObserver(self, selector: #selector(PlaceholderTextView.textChanged(_:)), name: NSNotification.Name.UITextViewTextDidChange, object: nil)
+        center.addObserver(self, selector: #selector(PlaceholderTextView.textChanged(_:)), name: .UITextViewTextDidChange, object: nil)
         
-        self.textChanged(nil)
+        textChanged(nil)
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.setup()
+        setup()
     }
     
     override init(frame: CGRect, textContainer: NSTextContainer?) {
         super.init(frame: frame, textContainer: textContainer)
-        self.setup()
+        setup()
     }
     
     convenience init() {
@@ -108,13 +94,13 @@ class PlaceholderTextView: UITextView {
         NotificationCenter.default.removeObserver(self)
     }
     
-    override func awakeFromNib() {
+    override public func awakeFromNib() {
         super.awakeFromNib()
         
-        self.setup()
+        setup()
     }
 
     func textChanged(_ notification:Notification?) {
-        self.viewWithTag(999)?.alpha = self.text.isEmpty ? 1.0 : 0.0
+        placeholderLabel.alpha = self.text.isEmpty ? 1.0 : 0.0
     }
 }
