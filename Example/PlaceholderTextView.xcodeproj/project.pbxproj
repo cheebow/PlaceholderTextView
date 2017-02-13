@@ -13,7 +13,7 @@
 		7924E6411B61E77E00D3BBB0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7924E6401B61E77E00D3BBB0 /* Images.xcassets */; };
 		7924E6441B61E77E00D3BBB0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7924E6421B61E77E00D3BBB0 /* LaunchScreen.xib */; };
 		7924E6501B61E77E00D3BBB0 /* PlaceholderTextViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7924E64F1B61E77E00D3BBB0 /* PlaceholderTextViewTests.swift */; };
-		796C8EFD1B62129D00EC4ACD /* PlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796C8EFC1B62129D00EC4ACD /* PlaceholderTextView.swift */; };
+		79E895901E51454400850C58 /* PlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E8958F1E51454400850C58 /* PlaceholderTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +37,7 @@
 		7924E6491B61E77E00D3BBB0 /* PlaceholderTextViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlaceholderTextViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7924E64E1B61E77E00D3BBB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7924E64F1B61E77E00D3BBB0 /* PlaceholderTextViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderTextViewTests.swift; sourceTree = "<group>"; };
-		796C8EFC1B62129D00EC4ACD /* PlaceholderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceholderTextView.swift; path = ../../Pod/Classes/PlaceholderTextView.swift; sourceTree = "<group>"; };
+		79E8958F1E51454400850C58 /* PlaceholderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceholderTextView.swift; path = ../../Pod/Classes/PlaceholderTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +79,7 @@
 		7924E6361B61E77E00D3BBB0 /* PlaceholderTextView */ = {
 			isa = PBXGroup;
 			children = (
-				796C8EFC1B62129D00EC4ACD /* PlaceholderTextView.swift */,
+				79E8958F1E51454400850C58 /* PlaceholderTextView.swift */,
 				7924E6391B61E77E00D3BBB0 /* AppDelegate.swift */,
 				7924E63B1B61E77E00D3BBB0 /* ViewController.swift */,
 				7924E63D1B61E77E00D3BBB0 /* Main.storyboard */,
@@ -161,7 +161,7 @@
 			attributes = {
 				LastSwiftMigration = 0730;
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = CHEEBOW;
 				TargetAttributes = {
 					7924E6331B61E77E00D3BBB0 = {
@@ -219,7 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				796C8EFD1B62129D00EC4ACD /* PlaceholderTextView.swift in Sources */,
+				79E895901E51454400850C58 /* PlaceholderTextView.swift in Sources */,
 				7924E63C1B61E77E00D3BBB0 /* ViewController.swift in Sources */,
 				7924E63A1B61E77E00D3BBB0 /* AppDelegate.swift in Sources */,
 			);
@@ -276,8 +276,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -321,8 +323,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -341,6 +345,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
