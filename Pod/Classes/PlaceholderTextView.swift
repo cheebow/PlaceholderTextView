@@ -7,6 +7,7 @@
 
 import UIKit
 
+@IBDesignable
 public class PlaceholderTextView: UITextView {
     let placeholderLeftMargin: CGFloat = 4.0
     let placeholderTopMargin: CGFloat = 8.0
@@ -48,13 +49,18 @@ public class PlaceholderTextView: UITextView {
             placeholderSizeToFit()
         }
     }
-    
-    fileprivate func placeholderSizeToFit() {
-        placeholderLabel.frame = CGRect(x: placeholderLeftMargin, y: placeholderTopMargin, width: frame.width - placeholderLeftMargin * 2, height: 0.0)
+
+    private func placeholderSizeToFit() {
+        placeholderLabel.frame = CGRect(
+            x: placeholderLeftMargin,
+            y: placeholderTopMargin,
+            width: frame.width - placeholderLeftMargin * 2,
+            height: 0.0
+        )
         placeholderLabel.sizeToFit()
     }
 
-    fileprivate func setup() {
+    private func setup() {
         contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0);
         font = UIFont.systemFont(ofSize: 12.0)
         
@@ -64,10 +70,15 @@ public class PlaceholderTextView: UITextView {
         placeholderSizeToFit()
         addSubview(placeholderLabel)
 
-        self.sendSubviewToBack(placeholderLabel)
+        sendSubviewToBack(placeholderLabel)
 
         let center = NotificationCenter.default
-        center.addObserver(self, selector: #selector(PlaceholderTextView.textChanged(_:)), name: UITextView.textDidChangeNotification, object: nil)
+        center.addObserver(
+            self,
+            selector: #selector(PlaceholderTextView.textChanged(_:)),
+            name: UITextView.textDidChangeNotification,
+            object: nil
+        )
         
         textChanged(nil)
     }
@@ -96,11 +107,10 @@ public class PlaceholderTextView: UITextView {
     
     override public func awakeFromNib() {
         super.awakeFromNib()
-        
         setup()
     }
 
     @objc func textChanged(_ notification:Notification?) {
-        placeholderLabel.alpha = self.text.isEmpty ? 1.0 : 0.0
+        placeholderLabel.alpha = text.isEmpty ? 1.0 : 0.0
     }
 }
