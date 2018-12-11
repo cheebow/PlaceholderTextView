@@ -100,7 +100,7 @@ public class PlaceholderTextView: UITextView {
         setup()
     }
 
-    func textChanged(_ notification:Notification?) {
+    @objc func textChanged(_ notification:Notification?) {
         placeholderLabel.alpha = self.text.isEmpty ? 1.0 : 0.0
     }
 }
