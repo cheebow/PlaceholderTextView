@@ -7,7 +7,6 @@
 
 import UIKit
 
-@IBDesignable
 public class PlaceholderTextView: UITextView {
     let placeholderLeftMargin: CGFloat = 4.0
     let placeholderTopMargin: CGFloat = 8.0

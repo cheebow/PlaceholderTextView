@@ -11,7 +11,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ```swift
 let placeholderTextView = PlaceholderTextView()
-let frame = CGRect(x: 0, y: 20, width: 320, height: 100)
+let frame = CGRect(x: 0.0, y: 64.0, width: view.bounds.width, height: 300.0)
 placeholderTextView.frame = frame
 placeholderTextView.placeholder = "Placeholder Text"
 placeholderTextView.placeholderColor = UIColor.lightGray
