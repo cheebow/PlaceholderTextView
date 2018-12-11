@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "PlaceholderTextView"
-  s.version          = "0.2.0"
+  s.version          = "0.3.0"
   s.summary          = "TextView with placeholder."
   s.description      = <<-DESC
                        Add a placeholder to TextView.
@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => "https://github.com/cheebow/PlaceholderTextView.git", :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/cheebow'
 
-  s.platform     = :ios, '8.0'
+  s.platform     = :ios, '9.0'
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'
