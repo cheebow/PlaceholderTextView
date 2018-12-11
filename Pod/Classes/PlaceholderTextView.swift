@@ -49,7 +49,7 @@ public class PlaceholderTextView: UITextView {
         }
     }
 
-    private func placeholderSizeToFit() {
+    fileprivate func placeholderSizeToFit() {
         placeholderLabel.frame = CGRect(
             x: placeholderLeftMargin,
             y: placeholderTopMargin,
@@ -59,7 +59,7 @@ public class PlaceholderTextView: UITextView {
         placeholderLabel.sizeToFit()
     }
 
-    private func setup() {
+    fileprivate func setup() {
         contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0);
         font = UIFont.systemFont(ofSize: 12.0)
         
